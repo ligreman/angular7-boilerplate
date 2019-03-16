@@ -8,7 +8,8 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatSliderModule,
-    MatSlideToggleModule, MatMenuModule
+    MatSlideToggleModule,
+    MatMenuModule
 } from '@angular/material';
 
 @NgModule({
@@ -36,7 +37,7 @@ import {
         MatSliderModule,
         MatSlideToggleModule,
         MatMenuModule
-    ],
+    ]
 })
 export class AngularMaterialModule {
 }

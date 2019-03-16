@@ -4,12 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AngularMaterialModule } from './angular-material/angular-material.module';
+import { AngularMaterialModule } from './shared/angular-material.module';
 import { FormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './routes/page-not-found/page-not-found.component';
+import { LoginComponent } from './routes/login/login.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        PageNotFoundComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
