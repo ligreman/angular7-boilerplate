@@ -1,3 +1,18 @@
+<mat-toolbar color="primary">
+
+    <mat-toolbar-row>
+        <span>Second Line</span>
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+        <span class="example-spacer"></span>
+        <mat-icon class="example-icon" color="accent">verified_user</mat-icon>
+    </mat-toolbar-row>
+
+</mat-toolbar>
+
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
     <h1>
@@ -21,6 +36,25 @@
 
 <p>{{ now }}</p>
 
+<h2 class="example-h2">Checkbox configuration</h2>
+
+<section class="example-section">
+    <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
+    <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Indeterminate</mat-checkbox>
+</section>
+
+<section class="example-section">
+    <label class="example-margin">Align:</label>
+    <mat-radio-group [(ngModel)]="labelPosition">
+        <mat-radio-button class="example-margin" value="after">After</mat-radio-button>
+        <mat-radio-button class="example-margin" value="before">Before</mat-radio-button>
+    </mat-radio-group>
+</section>
+
+<section class="example-section">
+    <mat-checkbox class="example-margin" [(ngModel)]="disabled">Disabled</mat-checkbox>
+</section>
+
 <button mat-raised-button>Basic</button>
 <button mat-raised-button color="primary">Primary</button>
 <button mat-raised-button color="accent">Accent</button>
@@ -31,5 +65,46 @@
 <button mat-flat-button color="accent">Accent</button>
 <button mat-flat-button color="warn">Warn</button>
 <button mat-flat-button disabled>Disabled</button>
+
+<p>
+    <mat-slider></mat-slider>
+</p>
+
+<p>
+    <mat-slide-toggle>Slide me!</mat-slide-toggle>
+</p>
+
+<p>
+    <mat-form-field appearance="legacy">
+        <mat-label>Legacy form field</mat-label>
+        <input matInput placeholder="Placeholder">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+</p>
+<p>
+    <mat-form-field appearance="standard" color="accent">
+        <mat-label>Standard form field</mat-label>
+        <input matInput placeholder="Placeholder">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+</p>
+<p>
+    <mat-form-field appearance="fill">
+        <mat-label>Fill form field</mat-label>
+        <input matInput placeholder="Placeholder">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+</p>
+<p>
+    <mat-form-field appearance="outline">
+        <mat-label>Outline form field</mat-label>
+        <input matInput placeholder="Placeholder">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+</p>
 
 <router-outlet></router-outlet>
