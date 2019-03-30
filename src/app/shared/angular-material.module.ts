@@ -11,6 +11,7 @@ import {
     MatSlideToggleModule,
     MatMenuModule
 } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [],
@@ -24,7 +25,8 @@ import {
         MatInputModule,
         MatSliderModule,
         MatSlideToggleModule,
-        MatMenuModule
+        MatMenuModule,
+        FormsModule
     ],
     exports: [
         MatButtonModule,
@@ -36,7 +38,8 @@ import {
         MatInputModule,
         MatSliderModule,
         MatSlideToggleModule,
-        MatMenuModule
+        MatMenuModule,
+        FormsModule
     ]
 })
 export class AngularMaterialModule {

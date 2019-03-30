@@ -6,7 +6,7 @@ import { LoginComponent } from './routes/login/login.component';
 const routes: Routes = [
     {
         path: 'home',
-        loadChildren: './routes/home/base.module#BaseModule'
+        loadChildren: './routes/home/home.module#HomeModule'
     },
     {
         path: 'login',

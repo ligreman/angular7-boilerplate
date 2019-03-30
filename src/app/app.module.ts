@@ -5,9 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './shared/angular-material.module';
-import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './routes/page-not-found/page-not-found.component';
 import { LoginComponent } from './routes/login/login.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
     declarations: [
@@ -18,9 +18,9 @@ import { LoginComponent } from './routes/login/login.component';
     imports: [
         BrowserModule,
         AngularMaterialModule,
+        FlexLayoutModule,
         AppRoutingModule,
-        BrowserAnimationsModule,
-        FormsModule
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

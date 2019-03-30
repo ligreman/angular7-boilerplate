@@ -1,116 +1,29 @@
-<!-- Header -->
-<mat-toolbar color="primary">
+<div fxLayout="column" fxFill>
+    <header fxFlex="none">
+        <mat-toolbar color="primary">
 
-    <mat-toolbar-row>
-        <span>Second Line</span>
-        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item>Item 1</button>
-            <button mat-menu-item>Item 2</button>
-        </mat-menu>
-        <span class="example-spacer"></span>
-        <mat-icon class="example-icon" color="accent">verified_user</mat-icon>
-    </mat-toolbar-row>
+            <mat-toolbar-row>
+                <span>Second Line</span>
+                <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+                <span class="example-spacer"></span>
+                <mat-icon class="example-icon" color="accent">verified_user</mat-icon>
+            </mat-toolbar-row>
 
-</mat-toolbar>
+        </mat-toolbar>
+    </header>
+    <section fxFlex fxLayout="row">
+        <nav fxFlex="20">
+            <button routerLink="/home">Home</button>
+            <button routerLink="/home/home2">Home2</button>
+            <button routerLink="/login">login</button>
+            <button routerLink="">Here</button>
+        </nav>
 
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-    <h1>
-        Welcome to {{ title }}!
-    </h1>
-    <img width="300" alt="Angular Logo"
-         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+        <router-outlet></router-outlet>
+    </section>
+    <footer fxFlex="5vh">footer</footer>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-    <li>
-        <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-    </li>
-    <li>
-        <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-    </li>
-    <li>
-        <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-    </li>
-</ul>
-
-<p>{{ now }}</p>
-
-<h2 class="example-h2">Checkbox configuration</h2>
-
-<section class="example-section">
-    <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
-    <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Indeterminate</mat-checkbox>
-</section>
-
-<section class="example-section">
-    <label class="example-margin">Align:</label>
-    <mat-radio-group [(ngModel)]="labelPosition">
-        <mat-radio-button class="example-margin" value="after">After</mat-radio-button>
-        <mat-radio-button class="example-margin" value="before">Before</mat-radio-button>
-    </mat-radio-group>
-</section>
-
-<section class="example-section">
-    <mat-checkbox class="example-margin" [(ngModel)]="disabled">Disabled</mat-checkbox>
-</section>
-
-<button mat-raised-button>Basic</button>
-<button mat-raised-button color="primary">Primary</button>
-<button mat-raised-button color="accent">Accent</button>
-<button mat-raised-button color="warn">Warn</button>
-<button mat-raised-button disabled>Disabled</button>
-<button mat-flat-button>Basic</button>
-<button mat-flat-button color="primary">Primary</button>
-<button mat-flat-button color="accent">Accent</button>
-<button mat-flat-button color="warn">Warn</button>
-<button mat-flat-button disabled>Disabled</button>
-
-<p>
-    <mat-slider></mat-slider>
-</p>
-
-<p>
-    <mat-slide-toggle>Slide me!</mat-slide-toggle>
-</p>
-
-<p>
-    <mat-form-field appearance="legacy">
-        <mat-label>Legacy form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-</p>
-<p>
-    <mat-form-field appearance="standard" color="accent">
-        <mat-label>Standard form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-</p>
-<p>
-    <mat-form-field appearance="fill">
-        <mat-label>Fill form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-</p>
-<p>
-    <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-</p>
-
-<button routerLink="/home">Home</button>
-<button routerLink="/home/home2">Home2</button>
-<button routerLink="/login">login</button>
-<button routerLink="">Here</button>
-
-<router-outlet></router-outlet>

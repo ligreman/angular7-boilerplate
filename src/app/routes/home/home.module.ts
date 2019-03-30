@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseRoutingModule } from './base-routing.module';
+import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { Home2Component } from './pages/home2/home2.component';
+import { AngularMaterialModule } from '../../shared/angular-material.module';
+import { FlexModule } from '@angular/flex-layout';
 
 @NgModule({
     declarations: [HomeComponent, Home2Component],
     imports: [
         CommonModule,
-        BaseRoutingModule
+        HomeRoutingModule,
+        AngularMaterialModule,
+        FlexModule
     ]
 })
-export class BaseModule {
+export class HomeModule {
 }
