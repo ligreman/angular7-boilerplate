@@ -8,6 +8,7 @@ import { AngularMaterialModule } from './shared/angular-material.module';
 import { PageNotFoundComponent } from './routes/page-not-found/page-not-found.component';
 import { LoginComponent } from './routes/login/login.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         AngularMaterialModule,
         FlexLayoutModule,
         AppRoutingModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]

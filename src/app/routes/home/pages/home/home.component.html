@@ -1,3 +1,11 @@
 <p>
-  home works!
+    home works!
 </p>
+
+<ul>
+    <li *ngFor="let user of users">
+        <img src="{{ user.avatar }}" />
+        <span>{{ user.name }}</span>
+        <span>{{ user['id'] }}</span>
+    </li>
+</ul>
