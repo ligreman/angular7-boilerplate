@@ -11,6 +11,7 @@ import {
     MatSlideToggleModule,
     MatMenuModule
 } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
         MatSliderModule,
         MatSlideToggleModule,
         MatMenuModule,
-        FormsModule
+        FormsModule,
+	FlexLayoutModule
     ],
     exports: [
         MatButtonModule,
@@ -39,7 +41,8 @@ import { FormsModule } from '@angular/forms';
         MatSliderModule,
         MatSlideToggleModule,
         MatMenuModule,
-        FormsModule
+        FormsModule,
+	FlexLayoutModule
     ]
 })
 export class AngularMaterialModule {
