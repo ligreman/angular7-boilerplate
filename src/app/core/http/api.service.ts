@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs/internal/observable/of';
-import { User } from '../interfaces/user';
+import { UserInterface } from '../interfaces/user.interface';
 
 @Injectable({
     providedIn: 'root'
@@ -16,26 +16,46 @@ export class ApiService {
     }
 
     // Puedo gestionar el propio error en la definición del api
-    getUsers(): Observable<User[]> {
+    getUsers(): Observable<UserInterface[]> {
         const endpoint = this.urlApi + 'users';
         // const endpointError = 'http://www.mocky.io/v2/5ca0a3d03300006d00a87e50';
 
-        return this.http.get<User[]>(endpoint)
+        return this.http.get<UserInterface[]>(endpoint)
             .pipe(
                 // Le paso al log
                 tap(_ => this.log('fetched users')),
                 // Handle error
-                catchError(this.handleError<User[]>('getUsers', []))
+                catchError(this.handleError<UserInterface[]>('getUsers', []))
             );
     }
 
     // Puedo delegar la gestión del error a quien hace uso de la llamada
-    getUsersWithoutHandlingError(): Observable<User[]> {
+    getUsersWithoutHandlingError(): Observable<UserInterface[]> {
         const endpointError = 'http://www.mocky.io/v2/5ca0a3d03300006d00a87e50';
 
-        return this.http.get<User[]>(endpointError)
+        return this.http.get<UserInterface[]>(endpointError)
             .pipe(
                 tap(_ => this.log('fetched users'))
+            );
+    }
+
+    /**
+     * Endpoint que nos genera la cookie con el token csrf
+     */
+    getCSRF(): Observable<any> {
+        return this.http.get<any>('http://localhost/api')
+            .pipe(
+                tap(_ => this.log('get csrf'))
+            );
+    }
+
+    /**
+     * Endpoint que requiere tener token csrf válido. Si usamos rutas absolutas necesitamos el interceptor xsrf
+     */
+    doPost(): Observable<any> {
+        return this.http.post<any>('http://localhost/api/csrfendpoint', {})
+            .pipe(
+                tap(_ => this.log('do post with csrf'))
             );
     }
 

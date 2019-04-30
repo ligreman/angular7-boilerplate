@@ -1,12 +1,12 @@
 /* 3rd party libraries */
-import {CommonModule} from '@angular/common';
-import {NgModule} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 /* Material components */
 
 /* our own custom components */
 
 /**
- * Módulo para las librerías de terceros, componentes propios que no
+ * MÃ³ulo para las librerÃ­as de terceros, componentes propios que no
  * tengan dependencia con el Core ni inyecte nada...
  */
 @NgModule({
@@ -26,7 +26,7 @@ import {NgModule} from '@angular/core';
 })
 
 /**
- * Clase del Módulo Shared
+ * Clase del MÃ³dulo Shared
  */
 export class SharedModule {
 }

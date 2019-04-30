@@ -2,6 +2,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { ApiService } from './http/api.service';
 
 /* our own custom services  */
 
@@ -18,11 +19,12 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
     declarations: [],
     providers: [
         /* our own custom services  */
+        ApiService
     ]
 })
 
 /**
- * Clase del Módulo Core
+ * Clase del MÃ³dulo Core
  */
 export class CoreModule {
     /* make sure CoreModule is imported only by one NgModule the AppModule */

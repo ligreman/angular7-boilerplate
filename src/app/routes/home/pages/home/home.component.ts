@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../../core/http/api.service';
-import { User } from '../../../../core/interfaces/user';
+import { UserInterface } from '../../../../core/interfaces/user.interface';
 
 @Component({
     selector: 'app-home',
@@ -8,7 +8,7 @@ import { User } from '../../../../core/interfaces/user';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    users: User[];
+    users: UserInterface[];
 
     constructor(private apiService: ApiService) {
     }
@@ -21,19 +21,15 @@ export class HomeComponent implements OnInit {
 
     getUsers() {
         this.apiService.getUsers()
-            .subscribe((users: User[]) => {
-                    console.log(users);
-                    this.users = users;
-                },
-                null,
-                () => {
-                    console.log('completo');
-                });
+            .subscribe((users: UserInterface[]) => {
+                console.log(users);
+                this.users = users;
+            }, null);
     }
 
     getUsers2() {
         this.apiService.getUsersWithoutHandlingError()
-            .subscribe((users: User[]) => {
+            .subscribe((users: UserInterface[]) => {
                 console.log(users);
                 this.users = users;
             }, (error) => {
